@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+* {
+    font-family: "Noto Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:"wdth" 200;
+}
+
+.main {
+    background-image: url('public/1.JPG');
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+    height: 100vh;
+    /* Full viewport height */
+}
+
+.customerMenu {
+
+    max-width: 500px;
+
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    transform: translateY(-80px);
+    /* Move up by 150px */
+}
+
+.buttonMenu {
+    border-radius: 20px;
+}
+.aboutImg{
+    max-width: 280px;
+}
+.active {
+    color: #000000; /* Change this to your desired color */
+  }
