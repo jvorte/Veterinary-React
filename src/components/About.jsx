@@ -26,7 +26,7 @@ const About = () => {
                 furry friends happy, healthy, and thriving. 🐾"
               </p>
               <div className="aboutImg flex justify-center items-center mt-4">
-                <img src="public/team.png" alt="Team" className="mx-auto ml-4" />
+                <img src="/team.png" alt="Team" className="mx-auto ml-4" />
               </div>
             </div>
             <div>

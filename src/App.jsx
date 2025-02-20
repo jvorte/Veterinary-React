@@ -8,19 +8,27 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Appointments from './components/Appointments';
 import Servises from './components/Servises';
-
+import { BrowserRouter} from 'react-router-dom';
 
 function App() {
   return (
     <div>
+         <BrowserRouter future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}>
 
-      <Navbar />
+
+    <Navbar />
       <Home />
       <About />
      
       <Servises />
       <Appointments />
       <Contact />
+
+
+ </BrowserRouter>  
     </div>
   );
 }

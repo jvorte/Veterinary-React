@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Appointments = () => {
+function Appointments() {
+  let navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     ownerName: '',
     petName: '',
@@ -9,13 +12,44 @@ const Appointments = () => {
     time: '',
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const [error, setError] = useState(null);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted Data:', formData);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    fetch('http://localhost:8000/api/action.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Something went wrong with the server!');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (data.success) {
+          navigate("/");  // Redirect to home or another page after successful submission
+      } else {
+          setError(data.error || "An unexpected error occurred.");
+      }
+  })
+  
+    .catch((error) => {
+      setError(error.message || "An error occurred while adding the appointment.");
+    });
   };
 
   return (
@@ -25,7 +59,7 @@ const Appointments = () => {
         <div className='pb-8 w-full flex justify-center items-center flex-col'>
           <p className='text-4xl font-bold inline border-b-4 text-gray-800 border-green-500'>Appointments</p>
           <p className='py-6 text-xl text-gray-800 text-center'>
-            We understand how important your time is, and that's why scheduling an appointment 
+            We understand how important your time is, and that's why scheduling an appointment
             at Furry Friends Vet is simple and stress-free. Whether your pet needs a routine check-up, vaccinations, or specialized care, you can easily book your visit through our system.
           </p>
         </div>
@@ -87,10 +121,13 @@ const Appointments = () => {
             </button>
           </form>
 
+          {/* Error Message */}
+          {error && <div className="text-red-500 mt-4">{error}</div>}
+
           {/* Image */}
           <div className='flex justify-center'>
             <img
-              src="/dog.png" // Αντικατέστησε το με το δικό σου link εικόνας
+              src="/dog.png" // Replace this with your actual image URL
               alt="Pet Care"
               className='rounded-lg'
             />
