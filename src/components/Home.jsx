@@ -1,9 +1,6 @@
 // Import required components and assets
 import React, { useState } from 'react';
-import { HiArrowNarrowRight } from 'react-icons/hi'; // Arrow icon for button
-import me from '../assets/me.png'; // Your profile photo
-import mac from '../assets/mac.png'; // Import mac image
-import { Link } from "react-scroll"; // For smooth scrolling
+
 
 const Home = () => {
   const [activeButton, setActiveButton] = useState('appointment');
