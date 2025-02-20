@@ -13,6 +13,7 @@ function Appointments() {
   });
 
   const [error, setError] = useState(null);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -41,15 +42,19 @@ function Appointments() {
     })
     .then((data) => {
       if (data.success) {
-          navigate("/");  // Redirect to home or another page after successful submission
+        setShowConfirmationModal(true);  // Show confirmation modal on success
       } else {
-          setError(data.error || "An unexpected error occurred.");
+        setError(data.error || "An unexpected error occurred.");
       }
-  })
-  
+    })
     .catch((error) => {
       setError(error.message || "An error occurred while adding the appointment.");
     });
+  };
+
+  const closeConfirmationModal = () => {
+    setShowConfirmationModal(false);
+    navigate("/");  // Redirect to home or another page after closing the modal
   };
 
   return (
@@ -134,6 +139,22 @@ function Appointments() {
           </div>
         </div>
       </div>
+
+      {/* Confirmation Modal */}
+      {showConfirmationModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Appointment Confirmed!</h2>
+            <p className="text-gray-800 mb-4">Your appointment has been successfully booked. We look forward to seeing you and your pet!</p>
+            <button 
+              onClick={closeConfirmationModal} 
+              className="bg-green-500 text-white py-2 px-4 rounded w-full"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
