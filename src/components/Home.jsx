@@ -1,6 +1,6 @@
 // Import required components and assets
 import React, { useState } from 'react';
-
+import { Link } from 'react-scroll';
 
 const Home = () => {
   const [activeButton, setActiveButton] = useState('appointment');
@@ -17,27 +17,16 @@ const Home = () => {
         {/* Left side - Text content */}
         <div className="flex flex-col justify-center h-full">
           {/* Main headline */}
-          <h2 className="text-4xl sm:text-7xl font-bold text-gray-100 drop-shadow-xl">
+          <h1 className="mainTitle text-4xl sm:text-7xl font-bold text-gray-100 drop-shadow-xl">
             Furry Friends Vet
-          </h2>
+          </h1>
           {/* Brief introduction */}
           <p className="text-gray-100 py-4 max-w-md">
-            I am currently expanding my skills in modern web technologies.
-            My main focus is building web applications using React, Tailwind, Next.js, and MongoDB.
+          Where your pets are treated like family! At Furry Friends Vet, we provide compassionate care and expert services to keep your furry friends happy, healthy, and thriving
           </p>
           {/* About Me button with hover effect */}
           <div>
-            {/* <Link
-              to="about"
-              smooth
-              duration={500}
-              className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
-            >
-              About Me
-              <span className="group-hover:rotate-90 duration-300">
-                <HiArrowNarrowRight size={25} className="ml-3" />
-              </span>
-            </Link> */}
+  
           </div>
         </div>
         {/* Right side - Profile image */}
@@ -46,12 +35,14 @@ const Home = () => {
         </div>
       </div>
       <div className='customerMenu'>
-        <button
-          className={`buttonMenu px-4 py-2 rounded-md m-2 ${activeButton === 'appointment' ? 'bg-black text-white' : 'bg-transparent text-black'} hover:bg-black hover:text-white focus:bg-black focus:text-white`}
-          onClick={() => handleButtonClick('appointment')}
-        >
-          Make an appointment
-        </button>
+        <Link to='appointments' smooth={true} duration={500}>
+          <button
+            className={`buttonMenu px-4 py-2 rounded-md m-2 ${activeButton === 'appointment' ? 'bg-black text-white' : 'bg-transparent text-black'} hover:bg-black hover:text-white focus:bg-black focus:text-white`}
+            onClick={() => handleButtonClick('appointment')}
+          >
+            Make an appointment
+          </button>
+        </Link>
         <button
           className={`buttonMenu px-4 py-2 rounded-md m-2 ${activeButton === 'diary' ? 'bg-black text-white' : 'bg-transparent text-black'} hover:bg-black hover:text-white focus:bg-black focus:text-white`}
           onClick={() => handleButtonClick('diary')}
@@ -62,7 +53,7 @@ const Home = () => {
           className={`buttonMenu px-4 py-2 rounded-md m-2 ${activeButton === 'bonus' ? 'bg-black text-white' : 'bg-transparent text-black'} hover:bg-black hover:text-white focus:bg-black focus:text-white`}
           onClick={() => handleButtonClick('bonus')}
         >
-          My Bonous
+          My Bonus
         </button>
       </div>
     </div>

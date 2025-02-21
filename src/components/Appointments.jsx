@@ -58,12 +58,12 @@ function Appointments() {
   };
 
   return (
-    <div name='appointments' className='w-full md:h-screen text-gray-300 bg-gray-100'>
+    <div name='appointments' className='w-full md:h-screen text-gray-300 '>
       <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
         {/* Section header */}
         <div className='pb-8 w-full flex justify-center items-center flex-col'>
-          <p className='text-4xl font-bold inline border-b-4 text-gray-800 border-green-500'>Appointments</p>
-          <p className='py-6 text-xl text-gray-800 text-center'>
+          <p className='text-3xl font-bold inline border-b-4 text-gray-800 border-slate-500'>Appointments</p>
+          <p className='py-6 text-md text-gray-800 text-center'>
             We understand how important your time is, and that's why scheduling an appointment
             at Furry Friends Vet is simple and stress-free. Whether your pet needs a routine check-up, vaccinations, or specialized care, you can easily book your visit through our system.
           </p>
@@ -72,7 +72,7 @@ function Appointments() {
         {/* Content Section: Form + Image */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
           {/* Form */}
-          <form onSubmit={handleSubmit} className='bg-white p-6 rounded-lg shadow-md max-w-md mx-auto'>
+          <form onSubmit={handleSubmit} className='bg-white p-6 rounded-lg shadow-xl max-w-md mx-auto'>
             <h2 className='text-2xl font-semibold text-gray-800 mb-4'>Book an Appointment</h2>
             <input
               type="text"
@@ -121,7 +121,7 @@ function Appointments() {
               className="border p-2 w-full mb-4"
               required
             />
-            <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded w-full">
+            <button type="submit" className="bg-slate-500 text-white py-2 px-4 rounded w-full">
               Book Appointment
             </button>
           </form>
@@ -130,7 +130,7 @@ function Appointments() {
           {error && <div className="text-red-500 mt-4">{error}</div>}
 
           {/* Image */}
-          <div className='flex justify-center'>
+          <div className='dog flex justify-center'>
             <img
               src="/dog.png" // Replace this with your actual image URL
               alt="Pet Care"
