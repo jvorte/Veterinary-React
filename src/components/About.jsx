@@ -5,6 +5,7 @@ const About = () => {
     <div name="about" id="about" className="w-full min-h-screen text-gray-800">
       {/* About Section */}
       <div className="flex flex-col justify-center items-center w-full h-full py-12 px-6 bg-gray-50">
+      <p className='text-3xl font-bold inline border-b-4 text-gray-800 mb-3 border-slate-500'>About us</p>
         <div className="max-w-[1200px] w-full grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="sm:text-left text-3xl font-bold">
             <p className="text-slate-500 mb-4">
