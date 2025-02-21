@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaArrowUp } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 
