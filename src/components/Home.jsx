@@ -31,62 +31,62 @@ const Home = () => {
           {/* About Me button with hover effect */}
           <div></div>
         </div>
-        {/* Right side - Profile image */}
-        <div className="mb-4 rightImg">
 
-        </div>
       </div>
       <div className="customerMenu">
+     <button
+          className={`buttonMenu px-4 py-2 rounded-md m-2 ${
+            activeButton === "appointment"
+              ? "bg-black text-white"
+              : "bg-transparent text-black"
+          } hover:bg-black hover:text-white focus:bg-black focus:text-white`}
+          onClick={() => handleButtonClick("appointment")}
+        >
+          <Link
+            to="appointments"
+            smooth={true}
+            duration={500}
+            onClick={() => navigate("/appointments")}
+          >
+            Appointments
+          </Link>
+        </button>
 
-    <button
-      className={`buttonMenu px-4 py-2 rounded-md m-2 ${
-        activeButton === "appointment"
-          ? "bg-black text-white"
-          : "bg-transparent text-black"
-      } hover:bg-black hover:text-white focus:bg-black focus:text-white`}
-      onClick={() => handleButtonClick("appointment")}>
-      <Link
-        to="appointments"
-        smooth={true}
-        duration={500}
-        onClick={() => navigate("/appointments")}>
-        Appointments
-      </Link>
-    </button>
+        <button
+          className={`buttonMenu px-4 py-2 rounded-md m-2 ${
+            activeButton === "diary"
+              ? "bg-black text-white"
+              : "bg-transparent text-black"
+          } hover:bg-black hover:text-white focus:bg-black focus:text-white`}
+          onClick={() => handleButtonClick("diary")}
+        >
+          <Link
+            to="bonus"
+            smooth={true}
+            duration={500}
+            onClick={() => navigate("/")}
+          >
+            My Pet Diaryments
+          </Link>
+        </button>
 
-    <button
-      className={`buttonMenu px-4 py-2 rounded-md m-2 ${
-        activeButton === "diary"
-          ? "bg-black text-white"
-          : "bg-transparent text-black"
-      } hover:bg-black hover:text-white focus:bg-black focus:text-white`}
-      onClick={() => handleButtonClick("diary")}>
-      <Link
-        to="bonus"
-        smooth={true}
-        duration={500}
-        onClick={() => navigate("/")}>
-        My Pet Diaryments
-      </Link>
-    </button>
-
-      <button
-        className={`buttonMenu px-4 py-2 rounded-md m-2 ${
-          activeButton === "bonus"
-            ? "bg-black text-white"
-            : "bg-transparent text-black"
-        } hover:bg-black hover:text-white focus:bg-black focus:text-white`}
-        onClick={() => handleButtonClick("bonus")}>
-        <Link
-          to="bonus"
-          smooth={true}
-          duration={500}
-          onClick={() => navigate("/")}>
-          My Bonus
-        </Link>
-      </button>
-
-
+        <button
+          className={`buttonMenu px-4 py-2 rounded-md m-2 ${
+            activeButton === "bonus"
+              ? "bg-black text-white"
+              : "bg-transparent text-black"
+          } hover:bg-black hover:text-white focus:bg-black focus:text-white`}
+          onClick={() => handleButtonClick("bonus")}
+        >
+          <Link
+            to="bonus"
+            smooth={true}
+            duration={500}
+            onClick={() => navigate("/")}
+          >
+            My Bonus
+          </Link>
+        </button>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 const Services = () => {
   return (
     // Main container with full height and centering
-    <div name='servises' className='w-full min-h-screen text-gray-800 flex items-center'>
+    <div name='services' className='w-full min-h-screen text-gray-800 flex items-center mt-20'>
       {/* Content wrapper with max width */}
       <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full'>
         {/* Header section */}

@@ -18,7 +18,7 @@
 
 .main {
 
-    background-image: url('/1.JPG');
+    background-image: url('/1.jpg');
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -55,5 +55,13 @@
   }
 
   .dog{
-    max-height: 450px;
+    max-height: 480px;
   }
+
+  @media (max-width: 640px) {
+    .customerMenu {
+      font-size: 14px; /* Μειώνεις το μέγεθος της γραμματοσειράς για μικρές συσκευές */
+      padding-top: 110px; /* Μειώνεις το padding αν χρειάζεται */
+    }
+  }
+  
